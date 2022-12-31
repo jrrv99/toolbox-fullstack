@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  backend:
+    build: 
+      context: ./backend
+    volumes:
+      - ./docker/backend:/var/lib/backend
+    container_name: Toolbox-backend
+    restart: always
+    tty: true
+    stdin_open: true
+    ports:
+      - 8008:3001
