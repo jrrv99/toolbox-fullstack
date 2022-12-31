@@ -52,13 +52,23 @@ pnpm start
 ### Endpoints
 
 ```http
-/GET /files/data
+GET /files/data
 ```
 
 > Returns all the files data
+
+```http
+GET /files/data?fileName=<fileName>
+```
 
 | query param | type | description |
 | :- | :- | :- |
 | `fileName` | `string` | specific file name |
 
 > Returns the data from the file specified in the queryParam
+
+```http
+GET /files/list
+```
+
+> Returns a list of files
