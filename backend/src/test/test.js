@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 
 describe('Csv Files', () => {
   describe('GET /files/data', () => {
-    it('Should get all the files', done => {
+    it('Should get all the files content', done => {
       chai
         .request(server)
         .get('/files/data')
@@ -18,5 +18,19 @@ describe('Csv Files', () => {
         });
     });
   });
+
+  describe('GET /files/list', () => {
+    it('Should get a file names list', done => {
+      chai
+        .request(server)
+        .get('/files/list')
+        .end((_err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a('object');
+          done();
+        });
+    });
+  });
 });
+
 
